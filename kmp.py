@@ -18,7 +18,7 @@ def KMPSearch(pat, txt):
             j += 1
   
         if j == M: 
-            print "Found pattern at index " + str(i-j) 
+            print ("Found pattern at index " + str(i-j) )
             j = lps[j-1] 
   
         # mismatch after j matches 
@@ -55,7 +55,10 @@ def computeLPSArray(pat, M, lps):
                 i += 1
   
 txt = "ABABDABACDABABCABAB"
-pat = "ABABCABAB"
+# pat = "AECEA"
+pat = "AACECAAAA$AAAACECAA"
 KMPSearch(pat, txt) 
-  
+a = [1,2,3,4]
+print(a[0:])
+
 # This code is contributed by Bhavya Jain 
