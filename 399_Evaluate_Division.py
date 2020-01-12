@@ -37,7 +37,7 @@ class Solution:
         queue = [(start,-1)]
         
         while len(queue) > 0:
-            cur, res = queue.pop()
+            cur, res = queue.pop(0)
             visited.add(cur)
             if cur == goal:
                 return res
@@ -45,10 +45,10 @@ class Solution:
                 if conn in visited:
                     continue
                 if res == -1:
-                    res = nodes[cur].connectTo[conn] 
+                    tmp = nodes[cur].connectTo[conn] 
                 else:
-                    res *= nodes[cur].connectTo[conn]
-                queue.append((conn, res))
+                    tmp = res * nodes[cur].connectTo[conn]
+                queue.append((conn, tmp))
         return -1.0
         
     
