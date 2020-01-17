@@ -33,6 +33,7 @@ class Solution:
         # calculate cost/quality ratio
         # quality sum * ratio = total wage
         workers = [[w/q,q] for w,q in zip(wage, quality)]
+        # sorted rate can make sure the qsum * r is the smallest of the chosed q
         workers = sorted(workers)
         heap =[]
         qsum = 0
