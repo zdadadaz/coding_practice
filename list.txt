@@ -1,0 +1,86 @@
+N random pick with weight
+MaxSum_Subsequence_Nonadjacent_Elements.py
+137_single_number_ii.py
+C longest duplicate substring
+700_Search_in_a_Binary_Search_Tree.py
+N surrounded regions
+308_Range_Sum_Query_2D_Mutable.py
+N largest divisible subset
+N count complete tree nodes
+130_Surrounded_Regions.py
+N reconstruct itinerary
+N find the duplicate number
+N single number ||
+O power of two
+Minimum_num_coins.py
+332_reconstruct_iterneray.py
+DP_fibonacci.py
+683_K_Empty_Slots.py
+edit_distance.py
+275_h_index_ll.py
+DP_longest_substring.py
+686_repeated_string_match_web.py
+1029_Two_city_scheduling_mine.py
+395_Longest_Substring_with_At_Least_K_Repeating_Characters.py
+489_Robot_Room_Cleaner.py
+482_License_Key_Formatting.py
+N sum root to leaf numbers
+214_Shortest_Palindrome_kmp.py
+929_Unique_Email_Addresses.py
+152_Maximum_Product_Subarray.py
+947_Most_Stones_Removed_with_Same_Row_or_Column.py
+N permutation sequence
+528_random_pick_with_weight.py
+O validate ip address
+O insert delete get random O(1)
+299_Bulls_and_Cows.py
+146_LRU_Cache.py
+60_permutation_sequence.py
+1_Two_Sum.py
+N dungeon game
+O invert binary tree
+399_Evaluate_Division.py
+N coin challenge 2
+N perfect squares
+459_Repeated_Substring_Pattern_optimal.py
+406_queue_reconstruction_by_height.py
+N h-index II
+857_Minimum_Cost_to_Hire_K_Workers.py
+681_next_closest_time.py
+787_cheapest_flights_within_k_stops.py
+392_is_subsequence.py
+131_palindrome_partition.py
+200_Number_of_Islands_mine.py
+222_Count_Complete_Tree_Nodes.py
+279_perfect_square.py
+Game_Scoring.py
+159_longest_substring_with_at_most_2_distinct_character.py
+287_find_the_duplicate_number.py
+largest_sum_subarrary.py
+23_Merge_k_Sorted_Lists.py
+N sort colors
+N word search |
+kmp.py
+O search in a binary search tree
+28_Implement_strStr()_mine.py
+O reverse string
+O cheapest flights within k stops
+843_Guess_the_Word.py
+35_search_insert_position.py
+844_Backspace_String_Compare.py
+3_Longest_Substring_Without_Repeating_Characters_mine.py
+714_dungeon_game.py
+N unique binary search tree
+628_Maximum_Product of_Three_Numbers.py
+X delete node in a linked list
+N unique paths
+N is subsequence
+75_sort_color.py
+O search inset position
+O two city scheduling
+368_largest_divisible_subset.py
+N queue reconstruction by height
+All_possible_braces.py
+904_Fruit_Into_Baskets_web.py
+833_Find_And_Replace_in_String.py
+coinschange.py
