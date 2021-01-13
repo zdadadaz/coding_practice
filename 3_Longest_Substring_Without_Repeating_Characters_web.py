@@ -20,6 +20,25 @@ class Solution:
             maxL = max(r-l+1,maxL)
             r+=1
         return maxL
+    
+    def lengthOfLongestSubstring_deletion(self, s: str) -> int:
+        n = len(s)
+        if n <2:
+            return n
+        hashset = {}
+        lt= 0
+        gLen = 0
+        for rt in range(n):    
+            if s[rt] in hashset:
+                newlt = hashset[s[rt]]+1
+                for i in range(lt, newlt):
+                    del hashset[s[i]]
+                lt = newlt    
+            hashset[s[rt]] = rt
+            gLen = max(gLen, rt-lt+1)
+        return gLen
+
+
 
 sol = Solution()
 A = "abcabcbb"

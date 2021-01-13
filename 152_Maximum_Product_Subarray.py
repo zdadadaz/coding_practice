@@ -61,6 +61,30 @@ def maxsubarrayproduct(arr):
 		return 0
 	return max_so_far 
 
+
+def maximumProduct_subarray_leetcode(nums):
+	if len(nums)==1:
+            return nums[0]
+        max_ending = min_ending = 0
+        
+	# to store maximum product sublist found so far
+	max_so_far = 0
+
+	# traverse the given list
+	for i in nums:
+		temp = max_ending
+
+		# update maximum product ending at current index
+		max_ending = max(i, max(i * max_ending, i * min_ending))
+
+		# update minimum product ending at current index
+		min_ending = min(i, min(i * temp, i * min_ending))
+
+		max_so_far = max(max_so_far, max_ending)
+		print(max_ending, min_ending, max_so_far)
+	return max_so_far
+            
+
 # Driver function to test above function 
 arr = [1, -2, -3, 0, 7, -8, -2] 
 print ("Maximum product subarray is " + str(maxsubarrayproduct(arr)) )

@@ -1,33 +1,22 @@
+# T(n) = T(n-1)+T(n-2)+..+T(1)
+# T(n+1) = T(n) + T(n-1) + ... + T(1)
+# T(n+1) = 2T(n)
+# T(n) = 2^n
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
-        pal = []
-        visited = []
-        num = 0
-        self.dfs(s, pal, visited, num)
-        return visited 
+        self.res = []
+        self.dfs(s, [])
+        return self.res
     
-    def dfs(self, s, pal, visited, num):
-        n = len(s)
-        if num == n:
-            # use deep copy for list
-            x = pal.copy()
-            visited.append(x)
-            return
-        
-        for i in range(1, n + 1):
-            if num + i > n:
-                break
-            if self.isPalindrome(s, num, num + i - 1):
-                pal.append(s[num:num+i])
-                self.dfs(s, pal, visited, num+i)
-                pal.pop() # need pop, otherwise it will keep all the time
-
-        
-    def isPalindrome(self, string: str, low: int, high: int): 
-        while low < high: 
-            if string[low] != string[high]: 
-                return False
-            low += 1
-            high -= 1
-        return True
-        
+    def dfs(self, s, temp):
+        if not s:
+            self.res.append(temp[:])
+            return 
+        for i in range(1, len(s)+1):
+            if self.isPan(s[:i]):
+                temp.append(s[:i])
+                self.dfs(s[i:], temp)
+                temp.pop()
+    
+    def isPan(self, s):
+        return s == s[::-1]

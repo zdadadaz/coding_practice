@@ -19,6 +19,24 @@ class Solution:
         out += str(B)+"B"
         return out
 
+class Solution2:
+    def getHint(self, secret: str, guess: str) -> str:
+        A = 0
+        buck =[0]*10
+        n = len(secret)
+        for i in range(n):
+            buck[int(secret[i])]+=1
+            buck[int(guess[i])]-=1
+            if secret[i] == guess[i]:
+                A+=1
+        acc = 0
+        for i in range(10):
+            if buck[i]>0:
+                acc+=buck[i]
+        B = n - A - acc
+        return str(A)+'A'+str(B)+'B'
+                
+                
 # A = "1122"
 # B = "2211"
 A="1123"
