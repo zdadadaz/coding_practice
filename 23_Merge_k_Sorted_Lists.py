@@ -1,59 +1,46 @@
 # Definition for singly-linked list.
 # class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
-    # O(kN)
-    def mergeKLists(self, lists: List[ListNode]):
-        if len(lists)==1:
-            return lists[0]
-        if len(lists)==0:
-            return None 
-        curlists = lists
-        while len(curlists)>1:
-            curlists = self.mergDivideandConquer(curlists)
-        
-        return curlists[0]
-    
-    def mergDivideandConquer(self,lists):
-        out = []
-        for i in range(0,len(lists)-1,2):
-            out.append(self.merger2Lists(lists[i],lists[i+1]))
-        if len(lists) % 2 == 1:
-            out.append(lists[-1])
-        return out
-    
-    def merger2Lists(self,list1,list2):
-        if list1 == None and list2 == None:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        if not lists:
             return None
-        if list1 == None:
-            return list2
-        if list2 == None:
-            return list1
+        l = 0
+        r = len(lists)-1
+        out = self.merge_sort(l, r, lists)
+        return out
         
-        outNode = point = ListNode(0)
-        while list1 != None and list2 != None:
-            if list1.val > list2.val:
-                point.next = list2
-                list2 = list2.next
+    def merge_sort(self, l, r, lists):
+        if l >= r :
+            return lists[l]
+        mid = (l+r)//2
+        out_l = self.merge_sort(l,mid,lists)
+        out_r = self.merge_sort(mid+1,r,lists)
+        return self.merge(out_l, out_r)
+        
+    def merge(self, link_l, link_r):
+        cur = dummy = ListNode()
+        while link_l or link_r:
+            node = None
+            if link_l and link_r:
+                if link_l.val < link_r.val:
+                    node = link_l
+                    link_l = link_l.next
+                    node.next = None
+                else:
+                    node = link_r
+                    link_r = link_r.next
+                    node.next = None
             else:
-                point.next = list1
-                list1 = list1.next
-            point = point.next
+                node = link_l if link_l else node
+                node = link_r if link_r else node
+                link_l = link_l.next if link_l else None
+                link_r = link_r.next if link_r else None
+                node.next = None
+            cur.next = node
+            cur = cur.next
+        return dummy.next
+        
             
-            
-        while list1 != None:
-            point.next = list1
-            point = point.next
-            list1 = list1.next
-    
-        while list2 != None:
-            point.next = list2
-            point = point.next
-            list2 = list2.next
-            
-        return outNode.next
-    
-    
