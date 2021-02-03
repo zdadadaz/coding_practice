@@ -17,3 +17,21 @@ class Solution:
             if flag:
                 return i
         return -1
+
+    def strStr_2nd_mine(self, haystack: str, needle: str) -> int:
+        n,m= len(haystack), len(needle)
+        if n<m:
+            return -1
+        if m==0:
+            return 0
+        for i in range(n-m+1):
+            if haystack[i:i+m]==needle:
+                return i
+            # flag = True
+            # for j in range(m):
+            #     if haystack[i+j]!=needle[j]:
+            #         flag = False
+            #         break
+            # if flag:
+            #     return i
+        return -1
